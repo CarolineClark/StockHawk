@@ -27,6 +27,11 @@
             android:name=".sync.QuoteIntentService"
             android:exported="false" />
 
+        <provider
+            android:name=".data.StockProvider"
+            android:authorities="com.udacity.stockhawk"
+            android:exported="false" />
+
         <service
             android:name=".sync.QuoteJobService"
             android:enabled="true"
@@ -34,22 +39,22 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <!-- Widget -->
-        <!--<service-->
-            <!--android:name=".widget.DetailWidgetRemoteViewsService"-->
-            <!--android:enabled="true"-->
-            <!--android:exported="false"-->
-            <!--android:permission="android.permission.BIND_REMOTEVIEWS" />-->
-        <!--<receiver-->
-            <!--android:name=".widget.DetailStockWidgetProvider"-->
-            <!--android:label="generic title"-->
-            <!--android:enabled="true" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />-->
-                <!--<action android:name="com.example.android.sunshine.app.ACTION_DATA_UPDATED" />-->
-            <!--</intent-filter>-->
-            <!--<meta-data android:name="android.appwidget.provider"-->
-                <!--android:resource="@xml/widget_info_detail" />-->
-        <!--</receiver>-->
+        <service
+            android:name=".widget.DetailWidgetRemoteViewsService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <receiver
+            android:name=".widget.DetailStockWidgetProvider"
+            android:label="generic title"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.android.sunshine.app.ACTION_DATA_UPDATED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_detail" />
+        </receiver>
 
     </application>
 
