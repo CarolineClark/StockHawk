@@ -143,10 +143,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         swipeRefreshLayout.setRefreshing(false);
 
-        if (data == null) {
-            return;
-        }
-
         if (data.getCount() != 0) {
             error.setVisibility(View.GONE);
         }
