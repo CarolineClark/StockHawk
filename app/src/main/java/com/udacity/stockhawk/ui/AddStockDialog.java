@@ -37,6 +37,10 @@ public class AddStockDialog extends DialogFragment {
 
         ButterKnife.bind(this, custom);
 
+        // TODO: Your stock may not exist here. You have two options:
+        // - check here and avoid adding it
+        // - remove it later if it doesn't exist.
+        // Advantage of catching it here is it's easier to show a toast.
         stock.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
