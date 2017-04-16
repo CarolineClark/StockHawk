@@ -19,6 +19,6 @@
         android:gravity="center"
         android:fontFamily="sans-serif-condensed"
         android:textAppearance="?android:textAppearanceLarge"
-        android:text="Cannot load stock info"/>
+        android:text="@string/no_stock_info"/>
 
 </LinearLayout>

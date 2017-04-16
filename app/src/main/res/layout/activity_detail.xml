@@ -9,9 +9,10 @@
         android:id="@+id/plot"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:contentDescription="@string/stock_history_plot"
         ap:title="Stock detail"
         ap:rangeTitle="range"
         ap:domainTitle="domain"
         ap:lineLabels="left|bottom"
-        ap:lineLabelRotationBottom="-45"/>
+        ap:lineLabelRotationBottom="-45" />
 </LinearLayout>

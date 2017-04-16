@@ -33,5 +33,8 @@
 
     <string name="title_widget" translatable="true">Widget</string>
     <string name="empty_list" />
+    <string name="new_stock_action" translatable="true">Add a new stock</string>
+    <string name="stock_history_plot" translatable="true">Plot of the stock history</string>
+    <string name="no_stock_info" translatable="true">Cannot load stock info</string>
 
 </resources>
