@@ -10,7 +10,5 @@
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen|keyguard"
-    tools:ignore="UnusedAttribute" />
-
-<!--TODO include this-->
-    <!--android:previewImage="@drawable/widget_preview_detail"-->
+    tools:ignore="UnusedAttribute"
+    android:previewImage="@drawable/widget_preview"/>

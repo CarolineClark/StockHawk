@@ -47,9 +47,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onClick(String symbol, String history) {
-        Timber.d("Symbol clicked: %s", symbol);
-        // TODO create new activity here
-        Timber.d("History = " + history);
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("history", history);
         startActivity(intent);

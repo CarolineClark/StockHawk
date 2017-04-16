@@ -1,40 +1,34 @@
 <resources>
     <string name="app_name" translatable="true">Stock Hawk</string>
-
-    <string name="pref_stocks_initialized_key" translatable="false">initialized</string>
-
-    <string name="pref_stocks_key" translatable="false">stocks</string>
-
-
-    <string name="pref_display_mode_key" translatable="false">displayMode</string>
-    <string name="pref_display_mode_default" translatable="false">@string/pref_display_mode_percentage_key</string>
-
-    <string name="pref_display_mode_absolute_key" translatable="false">absolute</string>
-    <string name="pref_display_mode_percentage_key" translatable="false">percentage</string>
-
-    <string name="default_stocks_yahoo" translatable="false">YHOO</string>
-    <string name="default_stocks_apple" translatable="false">AAPL</string>
-    <string name="default_stocks_microsoft" translatable="false">MSFT</string>
-    <string name="default_stocks_facebook" translatable="false">FB</string>
-
-    <string name="action_change_units" translatable="false">@string/pref_display_mode_key</string>
-
-
     <string name="dialog_title" translatable="true">Add Stock</string>
     <string name="dialog_hint" translatable="true">Symbol (e.g. GOOG)</string>
     <string name="dialog_cancel" translatable="true">Cancel</string>
     <string name="dialog_add" translatable="true">Add</string>
-
     <string name="error_no_network" translatable="true">No network connectivity! Will load stock cursor when the network is available.</string>
     <string name="error_no_stocks" translatable="true">No stocks added! Hit the floating action button to add one.</string>
-
     <string name="toast_stock_added_no_connectivity" translatable="true">Symbol %s added. Will refresh when network available.</string>
     <string name="toast_no_connectivity" translatable="true">Will refresh when network available.</string>
-
     <string name="title_widget" translatable="true">Widget</string>
     <string name="empty_list" />
     <string name="new_stock_action" translatable="true">Add a new stock</string>
     <string name="stock_history_plot" translatable="true">Plot of the stock history</string>
     <string name="no_stock_info" translatable="true">Cannot load stock info</string>
+    <string name="price" translatable="true">Price</string>
+    <string name="date" translatable="true">Date</string>
+    <string name="old_stock_info" translatable="true">No internet, stock information may be out of date</string>
+    <string name="stock_not_added" translatable="true">Stock not added</string>
+
+
+    <string name="pref_stocks_initialized_key" translatable="false">initialized</string>
+    <string name="pref_stocks_key" translatable="false">stocks</string>
+    <string name="pref_display_mode_key" translatable="false">displayMode</string>
+    <string name="pref_display_mode_default" translatable="false">@string/pref_display_mode_percentage_key</string>
+    <string name="pref_display_mode_absolute_key" translatable="false">absolute</string>
+    <string name="pref_display_mode_percentage_key" translatable="false">percentage</string>
+    <string name="default_stocks_yahoo" translatable="false">YHOO</string>
+    <string name="default_stocks_apple" translatable="false">AAPL</string>
+    <string name="default_stocks_microsoft" translatable="false">MSFT</string>
+    <string name="default_stocks_facebook" translatable="false">FB</string>
+    <string name="action_change_units" translatable="false">@string/pref_display_mode_key</string>
 
 </resources>

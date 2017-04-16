@@ -11,8 +11,8 @@
         android:layout_height="fill_parent"
         android:contentDescription="@string/stock_history_plot"
         ap:title="Stock detail"
-        ap:rangeTitle="range"
-        ap:domainTitle="domain"
+        ap:rangeTitle="@string/price"
+        ap:domainTitle="@string/date"
         ap:lineLabels="left|bottom"
         ap:lineLabelRotationBottom="-45" />
 </LinearLayout>

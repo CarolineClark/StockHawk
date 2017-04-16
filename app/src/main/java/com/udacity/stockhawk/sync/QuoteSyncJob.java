@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
+import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.PrefUtils;
 
@@ -33,6 +34,7 @@ public final class QuoteSyncJob {
 
     private static final int ONE_OFF_ID = 2;
     private static final String ACTION_DATA_UPDATED = "com.udacity.stockhawk.ACTION_DATA_UPDATED";
+    private static final String ACTION_STOCK_NOT_ADDED = "com.udacity.stockhawk.ACTION_STOCK_NOT_ADDED";
     private static final int PERIOD = 300000;
     private static final int INITIAL_BACKOFF = 10000;
     private static final int PERIODIC_ID = 1;
@@ -41,7 +43,7 @@ public final class QuoteSyncJob {
     private QuoteSyncJob() {
     }
 
-    static void getQuotes(Context context) {
+    static void getQuotes(final Context context) {
 
         Timber.d("Running sync job");
 
@@ -78,7 +80,10 @@ public final class QuoteSyncJob {
                 // The stock is in shared prefs, so need to remove at this point.
                 if (quote.getPrice() == null) {
                     PrefUtils.removeStock(context, symbol);
-                    // cannot send a toast at this level
+                    Intent dataUpdatedIntent = new Intent(ACTION_STOCK_NOT_ADDED);
+                    context.sendBroadcast(dataUpdatedIntent);
+                    return;
+
                 } else {
                     float price = quote.getPrice().floatValue();
                     float change = quote.getChange().floatValue();
@@ -156,7 +161,7 @@ public final class QuoteSyncJob {
             Intent nowIntent = new Intent(context, QuoteIntentService.class);
             context.startService(nowIntent);
         } else {
-
+            Toast.makeText(context, R.string.old_stock_info, Toast.LENGTH_LONG).show();
             JobInfo.Builder builder = new JobInfo.Builder(ONE_OFF_ID, new ComponentName(context, QuoteJobService.class));
 
 
