@@ -75,13 +75,17 @@ public final class QuoteSyncJob {
                 String symbol = iterator.next();
 
                 Stock stock = quotes.get(symbol);
+
+                if (stock == null) {
+                    removeStockAndInform(context, symbol);
+                    return;
+                }
+
                 StockQuote quote = stock.getQuote();
 
                 // The stock is in shared prefs, so need to remove at this point.
                 if (quote.getPrice() == null) {
-                    PrefUtils.removeStock(context, symbol);
-                    Intent dataUpdatedIntent = new Intent(ACTION_STOCK_NOT_ADDED);
-                    context.sendBroadcast(dataUpdatedIntent);
+                    removeStockAndInform(context, symbol);
                     return;
 
                 } else {
@@ -125,6 +129,12 @@ public final class QuoteSyncJob {
         } catch (IOException exception) {
             Timber.e(exception, "Error fetching stock quotes");
         }
+    }
+
+    private static void removeStockAndInform(Context context, String symbol) {
+        PrefUtils.removeStock(context, symbol);
+        Intent dataUpdatedIntent = new Intent(ACTION_STOCK_NOT_ADDED);
+        context.sendBroadcast(dataUpdatedIntent);
     }
 
     private static void schedulePeriodic(Context context) {
